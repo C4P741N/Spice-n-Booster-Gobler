@@ -30,57 +30,6 @@ namespace Spice_n_Booster_Gobler.Launch
 
                 Move_Head.New_Head_Position(scanned_section, Hy, Hx, ref map);
 
-                //for (int y = 0; y < Scope_Diameter; y++)
-                //{
-                //    for (int x = 0; x < Scope_Diameter; x++)
-                //    {
-                //        int map_y = scanned_section[y, 0, x];
-                //        int map_x = scanned_section[y, 1, x];
-
-                //        if(map_y < 0)
-                //        {
-                //            map_y += max;
-
-                //            if (map_y == max)
-                //            {
-                //                map_y = 0;
-                //            }
-                //        }
-                //        if (map_x < 0)
-                //        {
-                //            map_x += max;
-
-                //            if(map_x == max)
-                //            {
-                //                map_x = 0;
-                //            }
-                //        }
-
-                //        char position_value = map[map_y][map_x];
-
-                //        if (map_y == Hy && map_x == Hx)
-                //        {
-                //            if (position_value == 'B' || position_value == '$')
-                //            {
-                //                map[map_y][map_x] = '*';
-                //            }
-                //            if (position_value == '#')
-                //            {
-                //                Console.WriteLine();
-                //                Console.WriteLine();
-                //                Console.WriteLine("You disintegrated your caterpillar !");
-                //                return;
-                //            }
-
-                //            Console.Write("H");
-                //            continue;
-                //        }
-
-                //        Console.Write(position_value);
-                //    }
-                //    Console.WriteLine();
-                //}
-
                 Console.Write("Continue ? Y or N : ");
                 string continue_command = Console.ReadLine() ?? "";
                 Continue = continue_command == "Y";

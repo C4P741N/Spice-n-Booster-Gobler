@@ -10,8 +10,11 @@ namespace Spice_n_Booster_Gobler.Locomote
     {
         private const int Scope_Diameter = 11;
         private const int max = 30;
+        private static int stored_map_y = 0;
+        private static int stored_map_x = 0;
+        public static bool isStarted = false;
         public static void New_Head_Position(
-            int[,,] scanned_section, 
+            int[,,] scanned_section,
             int Hy, int Hx,
             ref char[][] map)
         {
@@ -43,6 +46,16 @@ namespace Spice_n_Booster_Gobler.Locomote
 
                     char position_value = map[map_y][map_x];
 
+                    if (map_y == stored_map_y && map_x == stored_map_x)
+                    {
+                        Move_Tail.New_Tail_Position(ref map_x, ref map_y, ref isStarted);
+
+                        if (isStarted)
+                        {
+                            continue;
+                        }
+                    }
+
                     if (map_y == Hy && map_x == Hx)
                     {
                         if (position_value == 'B' || position_value == '$')
@@ -58,6 +71,9 @@ namespace Spice_n_Booster_Gobler.Locomote
                         }
 
                         Console.Write("H");
+                        stored_map_x = map_x;
+                        stored_map_y = map_y;
+                        isStarted = true;
                         continue;
                     }
 
